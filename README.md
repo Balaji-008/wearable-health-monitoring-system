@@ -4,13 +4,9 @@
 
 ### 📸 Physical Build & Interface Gallery
 
-| Wearable smartwatch face | Mobile App BLE telemetry | CAD PETG Casing Render |
-| :---: | :---: | :---: |
-| ![Smartwatch Face](images/watch_face.jpg) | ![App Interface](images/app_interface.jpg) | ![Casing CAD](images/watch_photo6.jpg) |
-
-| Smartwatch hardware Assembly | Smartwatch on Wrist | Smartwatch Internal Build |
-| :---: | :---: | :---: |
-| ![Watch Assembly 1](images/watch_photo1.jpg) | ![Watch Assembly 2](images/watch_photo2.jpg) | ![Watch Assembly 3](images/watch_photo3.jpg) |
+| Smartwatch on Wrist (Real Setup) | 3D Printed Heart Rate Sensor Ring |
+| :---: | :---: |
+| ![Smartwatch on Hand](images/watch_photo.jpg) | ![HR Sensor Ring](images/watch_photo_finger ring.jpg) |
 
 ---
 
@@ -116,13 +112,17 @@ Step counting is offloaded entirely to the BMA400's internal hardware ASIC:
 ## 📁 Repository Structure
 
 📂 **`Final_Watch_code/`** — Core ESP32S3 smartwatch Arduino firmware  
-  * `Final_Watch_code.ino` — Core smartwatch OS, BLE stack, and state machine  
-📂 **`3D print final/`** — 3D printing casing files and CAD source files  
-📂 **`images/`** — High-resolution photos, pin configurations, and app screenshots  
-  * `watch_face.jpg` — OLED yellow/blue screen showing biometrics and battery status  
-  * `app_interface.jpg` — Mobile app showing BLE health telemetry received  
-  * `watch_photo1.jpg` to `watch_photo5.jpg` — Physical board assemblies and wrist fitting  
-  * `watch_photo6.jpg` — CAD casing render of the comfortable PETG casing  
+  * `Final_Watch_code.ino` — Core smartwatch OS, NimBLE stack, and power state machine  
+📂 **`3D print final/`** — Mechanical 3D printing casing & CAD STL design files:  
+  * `HR ring v2.stl` — Custom design for the optical sensor ring spacer  
+  * `Watch Cap 1 v1.stl` — Casing top cap protecting the ESP32S3 and OLED assembly  
+  * `Watch v1 v5.stl` — Main smartwatch chassis housing the 300mAh battery, button, and wiring  
+  * `HR ring v2.png` — Casing CAD diagram render  
+📂 **`images/`** — Real-world setup photos and interface details  
+  * `watch_photo.jpg` — High-definition physical photo of the smartwatch active on the wrist  
+  * `watch_photo_finger ring.jpg` — High-definition physical photo of the custom 3D printed ring  
+  * `watch_face.jpg` — OLED screen showing biometrics and battery status  
+  * `app_interface.jpg` — Mobile app showing active BLE health telemetry  
 📄 **`Smartwatch_Final_Report.pdf`** — Complete technical project documentation report  
 📄 **`README.md`** — Core project documentation  
 
@@ -147,7 +147,7 @@ Step counting is offloaded entirely to the BMA400's internal hardware ASIC:
 
 ## 🔬 Lessons Learned & Engineering Pivots
 
-1. **NimBLE Stack Selection:** The standard ESP32 BLE library consumes nearly **1.1MB of flash memory**, leaving almost zero room for UI graphics or games. Transitioning to **NimBLE** reduced the memory footprint by over **60%**, preserving room for dynamic easter-egg animations.
+1. **NimBLE Stack Selection:** The standard ESP32 BLE library consumes nearly **1.1MB of flash memory**, leaving almost zero room for user interface graphics and custom sensor logics. Transitioning to **NimBLE** reduced the memory footprint by over **60%**, preserving room for high-fidelity UI rendering and reliable multitasking state machines.
 2. **Voltage Divider Impedance:** The internal input impedance of the ESP32S3's analog pins can cause voltage sag under high-value resistor dividers. Tuning to a **47kΩ + 100kΩ divider** provided the ideal balance between minimal battery parasitic drain and accurate 12-bit battery state-of-charge measurements on **A0**.
 3. **Optomechanical Isolation:** Switching cell casing from Nylon Carbon Fiber to **PETG** provided superior skin comfort. Added a compliance-fit **TPU inner ring** around the MAX30102 sensor lens. This soft gasket blocks ambient light leakage while keeping the skin-contact force gentle and stable.
 
