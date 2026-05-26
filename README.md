@@ -6,7 +6,7 @@
 
 | Smartwatch on Wrist (Real Setup) | 3D Printed Heart Rate Sensor Ring |
 | :---: | :---: |
-| ![Smartwatch on Hand](images/watch_photo.jpg) | ![HR Sensor Ring](images/watch_photo_finger ring.jpg) |
+| ![Smartwatch on Hand](images/watch_photo.jpg) | ![HR Sensor Ring](images/watch_photo_ring.jpg) |
 
 ---
 
@@ -120,7 +120,7 @@ Step counting is offloaded entirely to the BMA400's internal hardware ASIC:
   * `HR ring v2.png` — Casing CAD diagram render  
 📂 **`images/`** — Real-world setup photos and interface details  
   * `watch_photo.jpg` — High-definition physical photo of the smartwatch active on the wrist  
-  * `watch_photo_finger ring.jpg` — High-definition physical photo of the custom 3D printed ring  
+  * `watch_photo_ring.jpg` — High-definition physical photo of the custom 3D printed ring  
   * `watch_face.jpg` — OLED screen showing biometrics and battery status  
   * `app_interface.jpg` — Mobile app showing active BLE health telemetry  
 📄 **`Smartwatch_Final_Report.pdf`** — Complete technical project documentation report  
