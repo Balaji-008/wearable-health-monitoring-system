@@ -1,0 +1,12 @@
+# Arduino build and local settings
+build/
+*.local.properties
+
+# Local OS files
+desktop.ini
+Thumbs.db
+.DS_Store
+
+# Local IDEs
+.vscode/
+.idea/
