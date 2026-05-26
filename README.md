@@ -156,5 +156,5 @@ Step counting is offloaded entirely to the BMA400's internal hardware ASIC:
 ## 👤 Author
 
 **Balaji Rayudu S**  
-B.Tech Electronics & Computers Engineering, Semester IV  
+B.Tech Electronics & Computers Engineering  
 Amrita Vishwa Vidyapeetham, Bengaluru  
